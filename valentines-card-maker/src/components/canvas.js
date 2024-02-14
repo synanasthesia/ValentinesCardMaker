@@ -1,4 +1,4 @@
-import { useState, createRef, useEffect } from 'react';
+import { useState, createRef } from 'react';
 import { Stage, Layer } from 'react-konva';
 import { IndividualSticker } from "./sticker";
 import { Background } from "./background";
@@ -25,7 +25,7 @@ function Canvas(props) {
         for (var i = 0; i < arr.length; i += 15) {
             var oneRow = [];
             oneRow.push(arr.slice(i, i + 15).map(item => {
-                return <div style={{ display: 'inline-block' }}>{
+                return <div key={item.url} style={{ display: 'inline-block' }}>{
                     <button
                         className="button"
                         onMouseDown={() => {
@@ -42,7 +42,7 @@ function Canvas(props) {
                     </button>
                 }</div>
             }))
-            separateElements.push(oneRow.map(itm => { return <div>{itm}</div> }))
+            separateElements.push(oneRow.map(itm => { return <div key={itm}>{itm}</div> }))
         }
         return separateElements;
     }
@@ -51,7 +51,7 @@ function Canvas(props) {
         for (var i = 0; i < arr.length; i += 4) {
             var oneRow = [];
             oneRow.push(arr.slice(i, i + 4).map(background => {
-                return <div style={{ display: 'inline-block' }}>{
+                return <div key={background.url} style={{ display: 'inline-block' }}>{
                     <button
                         className="button"
                         onMouseDown={() => {
@@ -63,7 +63,7 @@ function Canvas(props) {
                     </button>
                 }</div>
             }))
-            separateElements.push(oneRow.map(itm => { return <div>{itm}</div> }))
+            separateElements.push(oneRow.map(itm => { return <div key={itm}>{itm}</div> }))
         }
         return separateElements;
     }
@@ -72,7 +72,7 @@ function Canvas(props) {
         for (var i = 0; i < arr.length; i += 6) {
             var oneRow = [];
             oneRow.push(arr.slice(i, i + 6).map(border => {
-                return <div style={{ display: 'inline-block' }}>{
+                return <div key={border.url} style={{ display: 'inline-block' }}>{
                     <button
                         className="button"
                         onMouseDown={() => {
@@ -84,7 +84,7 @@ function Canvas(props) {
                     </button>
                 }</div>
             }))
-            separateElements.push(oneRow.map(itm => { return <div>{itm}</div> }))
+            separateElements.push(oneRow.map(itm => { return <div key={itm}>{itm}</div> }))
         }
         return separateElements;
     }
@@ -107,7 +107,7 @@ function Canvas(props) {
 
             <div class="row"><div class="canvas">
                 <div class="title">
-                    <h1>Valentine's Pixel Card Maker 2024!!</h1>
+                    <h1>{`Valentine's`} Pixel Card Maker 2024!!</h1>
                     <h2>Art by Moaw!</h2>
                     <h2>Code by synanasthesia</h2>
                     <h3>Pre-alpha edition</h3>

@@ -5,6 +5,6 @@ const Canvas = dynamic(() => import('../components/canvas'), {
   ssr: false,
 });
 
-export default function Page(props) {
-  return <Canvas />;
+export default function Page() {
+  return <Canvas />
 }
