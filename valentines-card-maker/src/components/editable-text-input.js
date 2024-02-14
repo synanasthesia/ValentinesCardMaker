@@ -12,7 +12,7 @@ function getStyle(width, height) {
     background: "none",
     outline: "none",
     resize: "none",
-    colour: "black",
+    colour: "white",
     fontSize: "24px",
     fontFamily: "Snide Asides"
   };

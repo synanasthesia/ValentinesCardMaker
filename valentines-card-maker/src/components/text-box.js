@@ -36,7 +36,7 @@ export function TextBox({
   }
 
   return (
-    <Group x={x} y={y}>
+    <Group draggable x={x} y={y}>
       <Rect
         x={20}
         y={20}

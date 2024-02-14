@@ -1,56 +1,109 @@
 export const stickersData = [
-        {
-            url: 'sticker/smiling_with_hearts.png',
-            width: 108,
-            alt: 'With Smiling'
-        },
-        {
-            url: 'sticker/small_rose_yellow.png',
-            width: 108,
-            alt: 'Rose Small'
-        },
-        {
-            url: 'sticker/small_rose_white.png',
-            width: 108,
-            alt: 'Rose Small'
-        },
-        { url: 'sticker/small_rose_red.png', width: 108, alt: 'Rose Small' },
-        { url: 'sticker/small_rose_pink.png', width: 108, alt: 'Rose Small' },
-        { url: 'sticker/rose_yellow.png', width: 126, alt: 'Yellow Rose' },
-        { url: 'sticker/rose_white.png', width: 126, alt: 'White Rose' },
-        { url: 'sticker/rose_red.png', width: 126, alt: 'Red Rose' },
-        { url: 'sticker/rose_pink.png', width: 126, alt: 'Pink Rose' },
-        {
-            url: 'sticker/pleading_emoji.png',
-            width: 102,
-            alt: 'Emoji Pleading'
-        },
-        { url: 'sticker/peach_emoji.png', width: 99, alt: 'Emoji Peach' },
-        {
-            url: 'sticker/heart_sparkles.png',
-            width: 108,
-            alt: 'Sparkles Heart'
-        },
-        {
-            url: 'sticker/eggplant_emoji.png',
-            width: 105,
-            alt: 'Emoji Eggplant'
-        },
-        { url: 'sticker/devil_emoji.png', width: 108, alt: 'Emoji Devil' },
-        { url: 'sticker/cupid_white.png', width: 165, alt: 'White Cupid' },
-        { url: 'sticker/cupid_3.png', width: 165, alt: 'Cupid 3 ' },
-        { url: 'sticker/cupid_2.png', width: 165, alt: 'Cupi 2' },
-        { url: 'sticker/cupid_1.png', width: 165, alt: 'Cupid 1' },
-        { url: 'sticker/cherry_red.png', width: 126, alt: 'Red Cherry' },
-        { url: 'sticker/cherry_pink.png', width: 126, alt: 'Pink Cherry' },
-        { url: 'sticker/bow2_white.png', width: 111, alt: 'White Bow2' },
-        { url: 'sticker/bow2_pink.png', width: 111, alt: 'Pink Bow2' },
-        { url: 'sticker/bow2_gold.png', width: 111, alt: 'Gold Bow2' },
-        { url: 'sticker/bow2_blue.png', width: 111, alt: 'Blue Bow2' },
-        { url: 'sticker/bow1_white.png', width: 108, alt: 'White Bow1' },
-        { url: 'sticker/bow1_pink.png', width: 108, alt: 'Pink Bow1' },
-        { url: 'sticker/bow1_gold.png', width: 108, alt: 'Gold Bow1' },
-        { url: 'sticker/bow1_blue.png', width: 108, alt: 'Blue Bow1' }
+    {
+        url: 'sticker/smiling_with_hearts.png',
+        width: 108,
+        alt: 'With Smiling'
+    },
+    {
+        url: 'sticker/small_rose_yellow.png',
+        width: 108,
+        alt: 'Rose Small'
+    },
+    {
+        url: 'sticker/small_rose_white.png',
+        width: 108,
+        alt: 'Rose Small'
+    },
+    { url: 'sticker/small_rose_red.png', width: 108, alt: 'Rose Small' },
+    { url: 'sticker/small_rose_pink.png', width: 108, alt: 'Rose Small' },
+    { url: 'sticker/rose_yellow.png', width: 126, alt: 'Yellow Rose' },
+    { url: 'sticker/rose_white.png', width: 126, alt: 'White Rose' },
+    { url: 'sticker/rose_red.png', width: 126, alt: 'Red Rose' },
+    { url: 'sticker/rose_pink.png', width: 126, alt: 'Pink Rose' },
+    {
+        url: 'sticker/pleading_emoji.png',
+        width: 102,
+        alt: 'Emoji Pleading'
+    },
+    { url: 'sticker/peach_emoji.png', width: 99, alt: 'Emoji Peach' },
+    {
+        url: 'sticker/heart_sparkles.png',
+        width: 108,
+        alt: 'Sparkles Heart'
+    },
+    {
+        url: 'sticker/eggplant_emoji.png',
+        width: 105,
+        alt: 'Emoji Eggplant'
+    },
+    { url: 'sticker/devil_emoji.png', width: 108, alt: 'Emoji Devil' },
+    { url: 'sticker/cupid_white.png', width: 165, alt: 'White Cupid' },
+    { url: 'sticker/cupid_3.png', width: 165, alt: 'Cupid 3 ' },
+    { url: 'sticker/cupid_2.png', width: 165, alt: 'Cupid 2' },
+    { url: 'sticker/cupid_1.png', width: 165, alt: 'Cupid 1' },
+    { url: 'sticker/cupid_blue.png', width: 165, alt: 'Blue Cupid' },
+    { url: 'sticker/cupid_gold.png', width: 165, alt: 'Gold Cupid' },
+    { url: 'sticker/cupid_red.png', width: 165, alt: 'Red Cupid' },
+    { url: 'sticker/cherry_red.png', width: 126, alt: 'Red Cherry' },
+    { url: 'sticker/cherry_pink.png', width: 126, alt: 'Pink Cherry' },
+    { url: 'sticker/bow2_white.png', width: 111, alt: 'White Bow2' },
+    { url: 'sticker/bow2_pink.png', width: 111, alt: 'Pink Bow2' },
+    { url: 'sticker/bow2_gold.png', width: 111, alt: 'Gold Bow2' },
+    { url: 'sticker/bow2_blue.png', width: 111, alt: 'Blue Bow2' },
+    { url: 'sticker/bow1_white.png', width: 108, alt: 'White Bow1' },
+    { url: 'sticker/bow1_pink.png', width: 108, alt: 'Pink Bow1' },
+    { url: 'sticker/bow1_gold.png', width: 108, alt: 'Gold Bow1' },
+    { url: 'sticker/bow1_blue.png', width: 108, alt: 'Blue Bow1' },
+    {
+        url: 'sticker/star1.png',
+        width: 72,
+        alt: 'Png Star1'
+    },
+    {
+        url: 'sticker/star2.png',
+        width: 57,
+        alt: 'Png Star2'
+    },
+    {
+        url: 'sticker/star3.png',
+        width: 108,
+        alt: 'Png Star3'
+    },
+    {
+        url: 'sticker/rose_bundle1_pink.png',
+        width: 124,
+        alt: 'Bundle1 Rose'
+      },
+      {
+        url: 'sticker/rose_bundle1_white.png',
+        width: 124,
+        alt: 'Bundle1 Rose'
+      },
+      {
+        url: 'sticker/rose_bundle1_yellow.png',
+        width: 124,
+        alt: 'Bundle1 Rose'
+      },
+      {
+        url: 'sticker/rose_bundle2_pink.png',
+        width: 162,
+        alt: 'Bundle2 Rose'
+      },
+      {
+        url: 'sticker/rose_bundle2_red.png',
+        width: 162,
+        alt: 'Bundle2 Rose'
+      },
+      {
+        url: 'sticker/rose_bundle2_white.png',
+        width: 162,
+        alt: 'Bundle2 Rose'
+      },
+      {
+        url: 'sticker/rose_bundle2_yellow.png',
+        width: 162,
+        alt: 'Bundle2 Rose'
+      },
 ];
 
 export const backgroundsData = [

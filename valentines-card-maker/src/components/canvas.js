@@ -8,9 +8,15 @@ import { backgroundsData, stickersData, bordersData } from "../file-data";
 function Canvas(props) {
     let [background, setBackground] = useState("backgrounds/bg_blueheart.png")
     let [border, setBorder] = useState("border/border_heartlace_blue.png")
-    const [text, setText] = useState("Hello World!");
-    const [width, setWidth] = useState(200);
-    const [height, setHeight] = useState(200);
+    const [text, setText] = useState("Enter text...");
+    const [toText, setTo] = useState("To:");
+    const [fromText, setFrom] = useState("From:");
+    const [width, setWidth] = useState(100);
+    const [height, setHeight] = useState(30);
+    const [toWidth, setToWidth] = useState(50);
+    const [toHeight, setToHeight] = useState(30);
+    const [fromWidth, setFromWidth] = useState(75);
+    const [fromHeight, setFromHeight] = useState(30);
     const [selected, setSelected] = useState(false);
 
 
@@ -97,61 +103,107 @@ function Canvas(props) {
         ]);
     };
     return (
-        <> <div class="row"><div class="canvas">
-            <Stage width={600} height={579} onClick={(e) => {
-                if (e.currentTarget._id === e.target._id) {
-                    setSelected(false);
-                }
-            }}>
-                <Layer>
-                    <Background image={background}></Background>
-                    <Background image={border}></Background>
+        <>
 
-                    {images.map((image, i) => {
-                        return (
-                            <IndividualSticker
-                                onDelete={() => {
-                                    const newImages = [...images];
-                                    newImages.splice(i, 1);
-                                    setImages(newImages);
+            <div class="row"><div class="canvas">
+                <div class="title">
+                    <h1>Valentine's Pixel Card Maker 2024!!</h1>
+                    <h2>Art by Moaw!</h2>
+                    <h2>Code by synanasthesia</h2>
+                    <h3>Pre-alpha edition</h3>
+                </div>
+                <Stage width={600} height={579} onClick={(e) => {
+                    if (e.currentTarget._id === e.target._id) {
+                        setSelected(false);
+                    }
+                }}>
+                    <Layer>
+                        <Background image={background}></Background>
+                        <Background image={border}></Background>
+
+                        {images.map((image, i) => {
+                            return (
+                                <IndividualSticker
+                                    onDelete={() => {
+                                        const newImages = [...images];
+                                        newImages.splice(i, 1);
+                                        setImages(newImages);
+                                    }}
+                                    onDragEnd={(event) => {
+                                        image.x = event.target.x();
+                                        image.y = event.target.y();
+                                    }}
+                                    key={i}
+                                    image={image}
+                                />
+                            );
+                        })}
+                        <TextBox
+                                x={100}
+                                y={100}
+                                text={toText}
+                                onTextChange={(value) => setTo(value)}
+                                width={toWidth}
+                                height={toHeight}
+                                selected={selected}
+                                onTextResize={(newWidth, newHeight) => {
+                                    setToWidth(newWidth);
+                                    setToHeight(newHeight);
                                 }}
-                                onDragEnd={(event) => {
-                                    image.x = event.target.x();
-                                    image.y = event.target.y();
+                                onClick={() => {
+                                    setSelected(!selected);
                                 }}
-                                key={i}
-                                image={image}
+                                onTextClick={(newSelected) => {
+                                    setSelected(newSelected);
+                                }}
                             />
-                        );
-                    })}
-                    <div class="black-font">
-                    <TextBox
-                        x={50}
-                        y={50}
-                        text={text}
-                        onTextChange={(value) => setText(value)}
-                        width={width}
-                        height={height}
-                        selected={selected}
-                        onTextResize={(newWidth, newHeight) => {
-                            setWidth(newWidth);
-                            setHeight(newHeight);
-                        }}
-                        onClick={() => {
-                            setSelected(!selected);
-                        }}
-                        onTextClick={(newSelected) => {
-                            setSelected(newSelected);
-                        }}
-                    />
-                    </div>
-                </Layer>
-            </Stage>
-        </div>
-            <div class="selectors">
-                <div class="backgrounds"></div>
-                <h1>Select a background:</h1>
-                {/* {backgroundsData.map((background) => {
+                            <TextBox
+                                x={300}
+                                y={300}
+                                text={fromText}
+                                onTextChange={(value) => setFrom(value)}
+                                width={fromWidth}
+                                height={fromHeight}
+                                selected={selected}
+                                onTextResize={(newWidth, newHeight) => {
+                                    setFromWidth(newWidth);
+                                    setFromHeight(newHeight);
+                                }}
+                                onClick={() => {
+                                    setSelected(!selected);
+                                }}
+                                onTextClick={(newSelected) => {
+                                    setSelected(newSelected);
+                                }}
+                            />
+                        <div class="black-font">
+                            <TextBox
+                                x={200}
+                                y={200}
+                                text={text}
+                                onTextChange={(value) => setText(value)}
+                                width={width}
+                                height={height}
+                                selected={selected}
+                                onTextResize={(newWidth, newHeight) => {
+                                    setWidth(newWidth);
+                                    setHeight(newHeight);
+                                }}
+                                onClick={() => {
+                                    setSelected(!selected);
+                                }}
+                                onTextClick={(newSelected) => {
+                                    setSelected(newSelected);
+                                }}
+                            />
+                        </div>
+                    </Layer>
+                </Stage>
+            </div>
+                <div class="selectors">
+                    <div class="backgrounds"></div>
+                    <h2>Select a background:</h2>
+                    {/* {backgroundsData.map((background) => {
                 return (
                     <button
                         className="button"
@@ -164,10 +216,10 @@ function Canvas(props) {
                     </button>
                 );
             })} */}
-                {separateBgs(backgroundsData)}
-                <div class="borders">
-                    <h1>Select a border:</h1>
-                    {/* {bordersData.map((border) => {
+                    {separateBgs(backgroundsData)}
+                    <div class="borders">
+                        <h2>Select a border:</h2>
+                        {/* {bordersData.map((border) => {
                     return (
                         <button
                             className="button"
@@ -180,11 +232,11 @@ function Canvas(props) {
                         </button>
                     );
                 })} */}
-                    {separateBorders(bordersData)}
-                </div>
-                <div class="stickers">
-                    <h1>Add some stickers:</h1>
-                    {/* {stickersData.map((sticker) => {
+                        {separateBorders(bordersData)}
+                    </div>
+                    <div class="stickers">
+                        <h2>Add some stickers:</h2>
+                        {/* {stickersData.map((sticker) => {
                     return (
                         <button
                             className="button"
@@ -201,10 +253,10 @@ function Canvas(props) {
                             <img alt={item.alt} src={item.url} width={item.width / 3} />
                         </button>)
                 })} */}
-                    {separateStickers(stickersData)}
+                        {separateStickers(stickersData)}
+                    </div>
                 </div>
-            </div>
-        </div></>
+            </div></>
     );
 }
 

@@ -29,6 +29,19 @@ body {
       rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
 
+h1 {
+  font-size: 48px;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 36px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
 .row {
   font-family: 'Snide Asides';
   font-size: 18px;
@@ -37,8 +50,9 @@ body {
   justify-content: space-evenly;
   align-items: center;
 }
-.black-font{
-  color:black;
+
+.black-font {
+  color: black;
   font-family: 'Snide Asides';
 }
 

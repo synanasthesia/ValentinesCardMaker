@@ -55,7 +55,7 @@ export function ResizableText({
         ref={textRef}
         text={text}
         fill="black"
-        fontFamily="sans-serif"
+        fontFamily="Snide Asides"
         fontSize={24}
         perfectDrawEnabled={false}
         onTransform={handleResize}
