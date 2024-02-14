@@ -1,3 +1,4 @@
+//sticker credit goes to: https://blog.theodo.com/2020/11/react-konva-stickers/
 import useImage from "use-image";
 import React, { useState, useEffect, useRef } from "react";
 import { Image as KonvaImage, Group } from "react-konva";

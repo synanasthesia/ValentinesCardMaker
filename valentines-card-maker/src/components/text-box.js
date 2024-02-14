@@ -1,3 +1,5 @@
+// text credit goes to https://colinwren.is/blog/create-an-editable--resizable-text-label-in-konva-with-react
+
 import React, { useState, useEffect } from "react";
 import { Group, Rect } from "react-konva";
 import { EditableText } from "./editable-text";
